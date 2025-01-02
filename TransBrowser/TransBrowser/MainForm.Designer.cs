@@ -96,8 +96,7 @@ namespace TransBrowser
             this.Name = "MainForm";
             this.Text = "TransBrowser";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
-            this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
+           
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

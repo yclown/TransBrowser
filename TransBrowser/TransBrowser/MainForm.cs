@@ -74,6 +74,8 @@ namespace TransBrowser
         private void MainForm_Load(object sender, EventArgs e)
         {
             Init();
+            this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
+            this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
         }
         public void Init()
         {
