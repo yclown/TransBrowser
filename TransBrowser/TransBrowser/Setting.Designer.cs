@@ -30,13 +30,11 @@ namespace TransBrowser
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setting));
-            this.windowBar1 = new AntdUI.WindowBar();
             this.select1 = new AntdUI.Select();
             this.label1 = new AntdUI.Label();
             this.slider1 = new AntdUI.Slider();
             this.switch1 = new AntdUI.Switch();
             this.flowLayoutPanel1 = new AntdUI.In.FlowLayoutPanel();
-            this.label2 = new AntdUI.Label();
             this.label3 = new AntdUI.Label();
             this.switch2 = new AntdUI.Switch();
             this.label4 = new AntdUI.Label();
@@ -44,22 +42,15 @@ namespace TransBrowser
             this.label5 = new AntdUI.Label();
             this.input1 = new AntdUI.Input();
             this.button1 = new AntdUI.Button();
+            this.pageHeader1 = new AntdUI.PageHeader();
+            this.label2 = new AntdUI.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // windowBar1
-            // 
-            this.windowBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.windowBar1.Location = new System.Drawing.Point(0, 0);
-            this.windowBar1.Name = "windowBar1";
-            this.windowBar1.Size = new System.Drawing.Size(445, 23);
-            this.windowBar1.TabIndex = 0;
-            this.windowBar1.Text = "Setting";
             // 
             // select1
             // 
             this.select1.List = true;
-            this.select1.Location = new System.Drawing.Point(314, 315);
+            this.select1.Location = new System.Drawing.Point(3, 109);
             this.select1.Name = "select1";
             this.select1.Size = new System.Drawing.Size(119, 31);
             this.select1.TabIndex = 1;
@@ -103,18 +94,11 @@ namespace TransBrowser
             this.flowLayoutPanel1.Controls.Add(this.label5);
             this.flowLayoutPanel1.Controls.Add(this.input1);
             this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.select1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 29);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(421, 280);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(421, 182);
             this.flowLayoutPanel1.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(3, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "无窗口";
             // 
             // label3
             // 
@@ -175,14 +159,32 @@ namespace TransBrowser
             this.button1.Text = "加载";
             this.button1.Type = AntdUI.TTypeMini.Primary;
             // 
+            // pageHeader1
+            // 
+            this.pageHeader1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pageHeader1.Location = new System.Drawing.Point(0, 0);
+            this.pageHeader1.Name = "pageHeader1";
+            this.pageHeader1.ShowButton = true;
+            this.pageHeader1.ShowIcon = true;
+            this.pageHeader1.Size = new System.Drawing.Size(445, 23);
+            this.pageHeader1.TabIndex = 0;
+            this.pageHeader1.Text = "Setting";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(3, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 23);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "无窗口";
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 358);
+            this.ClientSize = new System.Drawing.Size(445, 229);
+            this.Controls.Add(this.pageHeader1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.select1);
-            this.Controls.Add(this.windowBar1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Setting";
             this.Text = "Setting";
@@ -193,14 +195,11 @@ namespace TransBrowser
         }
 
         #endregion
-
-        private AntdUI.WindowBar windowBar1;
         private AntdUI.Select select1;
         private AntdUI.Label label1;
         private AntdUI.Slider slider1;
         private AntdUI.Switch switch1;
         private AntdUI.In.FlowLayoutPanel flowLayoutPanel1;
-        private AntdUI.Label label2;
         private AntdUI.Label label3;
         private AntdUI.Switch switch2;
         private AntdUI.Label label4;
@@ -208,5 +207,7 @@ namespace TransBrowser
         private AntdUI.Label label5;
         private AntdUI.Input input1;
         private AntdUI.Button button1;
+        private AntdUI.PageHeader pageHeader1;
+        private AntdUI.Label label2;
     }
 }

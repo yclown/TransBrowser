@@ -51,7 +51,7 @@ namespace TransBrowser
         public void SetDefaultColor(Color color)
         {
             //this.webView21.DefaultBackgroundColor = color;
-            this.windowBar1.BackColor = color;
+            this.pageHeader1.BackColor = color;
         }
 
         public void SetShowInTaskBar(bool show)
@@ -64,7 +64,7 @@ namespace TransBrowser
         }
         public void ShowWindowsBar(bool noTitle)
         {
-            this.windowBar1.Visible = !noTitle;
+            this.pageHeader1.Visible = !noTitle;
         }
         public void SetPosition(Point point)
         {

@@ -89,10 +89,6 @@ namespace TransBrowser
             Properties.Settings.Default.ThemeBackColor = color;
             Properties.Settings.Default.Save();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.ShowInTaskbar = !this.ShowInTaskbar;
-        }
+         
     }
 }

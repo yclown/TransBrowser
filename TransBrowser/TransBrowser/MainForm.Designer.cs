@@ -31,23 +31,14 @@ namespace TransBrowser
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.windowBar1 = new AntdUI.WindowBar();
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageHeader1 = new AntdUI.PageHeader();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // windowBar1
-            // 
-            this.windowBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.windowBar1.Location = new System.Drawing.Point(0, 0);
-            this.windowBar1.Name = "windowBar1";
-            this.windowBar1.Size = new System.Drawing.Size(584, 32);
-            this.windowBar1.TabIndex = 0;
-            this.windowBar1.Text = "TransBrowser";
             // 
             // webView21
             // 
@@ -55,9 +46,9 @@ namespace TransBrowser
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webView21.Location = new System.Drawing.Point(0, 32);
+            this.webView21.Location = new System.Drawing.Point(0, 0);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(584, 356);
+            this.webView21.Size = new System.Drawing.Size(584, 388);
             this.webView21.TabIndex = 1;
             this.webView21.ZoomFactor = 1D;
             // 
@@ -83,13 +74,24 @@ namespace TransBrowser
             this.设置ToolStripMenuItem.Text = "设置";
             this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
             // 
+            // pageHeader1
+            // 
+            this.pageHeader1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pageHeader1.Location = new System.Drawing.Point(0, 0);
+            this.pageHeader1.Name = "pageHeader1";
+            this.pageHeader1.ShowButton = true;
+            this.pageHeader1.ShowIcon = true;
+            this.pageHeader1.Size = new System.Drawing.Size(584, 23);
+            this.pageHeader1.TabIndex = 2;
+            this.pageHeader1.Text = "TransBrowser";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 388);
+            this.Controls.Add(this.pageHeader1);
             this.Controls.Add(this.webView21);
-            this.Controls.Add(this.windowBar1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "TransBrowser";
@@ -103,12 +105,11 @@ namespace TransBrowser
         }
 
         #endregion
-
-        private AntdUI.WindowBar windowBar1;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
+        private AntdUI.PageHeader pageHeader1;
     }
 }
 
