@@ -14,18 +14,38 @@ namespace TransBrowser
     public partial class Setting : Window
     {
         private MainForm mainForm;
+        public Setting(MainForm mainForm)
+        {
+            this.mainForm = mainForm;
+            InitializeComponent();
+            Init();
+        }
         public Setting()
         {
             InitializeComponent();
+            //Init();
         }
-        public void SetMainForm(MainForm MainForm) {
-            this.mainForm = MainForm;
-        }
+       
         private void Setting_Load(object sender, EventArgs e)
         {
             this.select1.Items=new AntdUI.BaseCollection() {"中文","English" };
+            
         }
+        public void Init() {
+            this.slider1.Value = (int)Properties.Settings.Default.FormOpacity;
+            this.input1.Text = Properties.Settings.Default.DefaultUrl;
+            this.switch1.Checked = Properties.Settings.Default.NoTitle;
+            this.switch2.Checked = Properties.Settings.Default.ShowInTaskbar;
+            this.colorPicker1.Value = Properties.Settings.Default.ThemeBackColor; //Properties.Settings.Default.ThemeBackColor;  //
+             
+            //this.select1.SelectedIndexChanged += new AntdUI.IntEventHandler(this.select1_SelectedIndexChanged);
+            this.slider1.ValueChanged += new AntdUI.IntEventHandler(this.slider1_ValueChanged);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.switch1.CheckedChanged += new AntdUI.BoolEventHandler(this.switch1_CheckedChanged);
+            this.switch2.CheckedChanged += new AntdUI.BoolEventHandler(this.switch2_CheckedChanged);
+            this.colorPicker1.ValueChanged += new AntdUI.ColorEventHandler(this.colorPicker1_ValueChanged);
 
+        }
         private void select1_SelectedIndexChanged(object sender, IntEventArgs e)
         {
             var lan= ((AntdUI.Select)sender).SelectedValue.ToString();
@@ -34,31 +54,45 @@ namespace TransBrowser
 
         private void slider1_ValueChanged(object sender, IntEventArgs e)
         {
-            mainForm.SetTans( Math.Round(slider1.Value / 100.0, 2));
-           
+            mainForm.SetTans(slider1.Value);
+            Properties.Settings.Default.FormOpacity = slider1.Value;
+            Properties.Settings.Default.Save();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             mainForm.LoadUrl(this.input1.Text);
+            Properties.Settings.Default.DefaultUrl = this.input1.Text;
+            Properties.Settings.Default.Save();
         }
 
         private void switch1_CheckedChanged(object sender, BoolEventArgs e)
         {
-            bool showbar= !e.Value;
-            mainForm.ShowWindowsBar(showbar);
+            bool notitle= e.Value;
+            mainForm.ShowWindowsBar(notitle);
+            Properties.Settings.Default.NoTitle = notitle;
+            Properties.Settings.Default.Save();
         }
 
         private void switch2_CheckedChanged(object sender, BoolEventArgs e)
         {
-            bool check = e.Value;
-            mainForm.SetShowInTaskBar(check);
+            bool showintask = e.Value;
+            mainForm.SetShowInTaskBar(showintask);
+            Properties.Settings.Default.ShowInTaskbar = showintask;
+            Properties.Settings.Default.Save();
         }
 
         private void colorPicker1_ValueChanged(object sender, ColorEventArgs e)
         {
             var color = e.Value;
             mainForm.SetDefaultColor(color);
+            Properties.Settings.Default.ThemeBackColor = color;
+            Properties.Settings.Default.Save();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.ShowInTaskbar = !this.ShowInTaskbar;
         }
     }
 }

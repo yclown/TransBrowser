@@ -13,6 +13,7 @@ namespace TransBrowser
 {
     public partial class MainForm : Window
     {
+        public bool inited = false;
         public MainForm()
         {
             InitializeComponent();
@@ -26,8 +27,8 @@ namespace TransBrowser
 
         private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Setting setting = new Setting();
-            setting.SetMainForm(this);
+            Setting setting = new Setting(this);
+            //setting.SetMainForm(this);
             setting.Show();
         }
 
@@ -44,11 +45,12 @@ namespace TransBrowser
         }
         public void SetTans(double trans)
         {
+            trans = Math.Round(trans / 100.0, 2);
             this.Opacity = trans;
         }
         public void SetDefaultColor(Color color)
         {
-            this.webView21.DefaultBackgroundColor = color;
+            //this.webView21.DefaultBackgroundColor = color;
             this.windowBar1.BackColor = color;
         }
 
@@ -56,10 +58,50 @@ namespace TransBrowser
         {
             this.ShowInTaskbar = show;
         }
-
-        public void ShowWindowsBar(bool show)
+        public void SetSize(Size size)
         {
-            this.windowBar1.Visible = show;
+            this.Size = size;
+        }
+        public void ShowWindowsBar(bool noTitle)
+        {
+            this.windowBar1.Visible = !noTitle;
+        }
+        public void SetPosition(Point point)
+        {
+             
+            this.Location = point;
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Init();
+        }
+        public void Init()
+        {
+            ShowWindowsBar(Properties.Settings.Default.NoTitle);
+            SetShowInTaskBar(Properties.Settings.Default.ShowInTaskbar);
+            SetPosition(Properties.Settings.Default.FormPosition);
+            LoadUrl(Properties.Settings.Default.DefaultUrl);
+            SetTans(Properties.Settings.Default.FormOpacity);
+            SetDefaultColor(Properties.Settings.Default.ThemeBackColor);
+            SetSize(Properties.Settings.Default.FormSize);
+            inited = true;
+        }
+
+        private void MainForm_LocationChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal&&inited)
+            {
+                Properties.Settings.Default.FormPosition =this.Location;
+                Properties.Settings.Default.Save();
+            }
+          
+        }
+
+        private void MainForm_ResizeEnd(object sender, EventArgs e)
+        {
+            var size= ((System.Windows.Forms.Control)sender).Size;
+            Properties.Settings.Default.FormSize = size;
+            Properties.Settings.Default.Save();
         }
     }
 }

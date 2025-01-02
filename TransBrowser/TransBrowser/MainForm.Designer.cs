@@ -45,7 +45,7 @@ namespace TransBrowser
             this.windowBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.windowBar1.Location = new System.Drawing.Point(0, 0);
             this.windowBar1.Name = "windowBar1";
-            this.windowBar1.Size = new System.Drawing.Size(584, 23);
+            this.windowBar1.Size = new System.Drawing.Size(584, 32);
             this.windowBar1.TabIndex = 0;
             this.windowBar1.Text = "TransBrowser";
             // 
@@ -55,9 +55,9 @@ namespace TransBrowser
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webView21.Location = new System.Drawing.Point(0, 23);
+            this.webView21.Location = new System.Drawing.Point(0, 32);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(584, 365);
+            this.webView21.Size = new System.Drawing.Size(584, 356);
             this.webView21.TabIndex = 1;
             this.webView21.ZoomFactor = 1D;
             // 
@@ -74,12 +74,12 @@ namespace TransBrowser
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.设置ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
             // 
             // 设置ToolStripMenuItem
             // 
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.设置ToolStripMenuItem.Text = "设置";
             this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
             // 
@@ -93,6 +93,9 @@ namespace TransBrowser
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "TransBrowser";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
+            this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

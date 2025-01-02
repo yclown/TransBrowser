@@ -63,7 +63,6 @@ namespace TransBrowser
             this.select1.Name = "select1";
             this.select1.Size = new System.Drawing.Size(119, 31);
             this.select1.TabIndex = 1;
-            this.select1.SelectedIndexChanged += new AntdUI.IntEventHandler(this.select1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -82,7 +81,6 @@ namespace TransBrowser
             this.slider1.Size = new System.Drawing.Size(323, 32);
             this.slider1.TabIndex = 4;
             this.slider1.Text = "slider1";
-            this.slider1.ValueChanged += new AntdUI.IntEventHandler(this.slider1_ValueChanged);
             // 
             // switch1
             // 
@@ -91,7 +89,6 @@ namespace TransBrowser
             this.switch1.Size = new System.Drawing.Size(40, 23);
             this.switch1.TabIndex = 5;
             this.switch1.Text = "switch1";
-            this.switch1.CheckedChanged += new AntdUI.BoolEventHandler(this.switch1_CheckedChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -134,7 +131,6 @@ namespace TransBrowser
             this.switch2.Size = new System.Drawing.Size(40, 23);
             this.switch2.TabIndex = 7;
             this.switch2.Text = "switch2";
-            this.switch2.CheckedChanged += new AntdUI.BoolEventHandler(this.switch2_CheckedChanged);
             // 
             // label4
             // 
@@ -153,7 +149,6 @@ namespace TransBrowser
             this.colorPicker1.TabIndex = 9;
             this.colorPicker1.Text = "colorPicker1";
             this.colorPicker1.Value = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
-            this.colorPicker1.ValueChanged += new AntdUI.ColorEventHandler(this.colorPicker1_ValueChanged);
             // 
             // label5
             // 
@@ -179,7 +174,6 @@ namespace TransBrowser
             this.button1.TabIndex = 12;
             this.button1.Text = "加载";
             this.button1.Type = AntdUI.TTypeMini.Primary;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Setting
             // 
