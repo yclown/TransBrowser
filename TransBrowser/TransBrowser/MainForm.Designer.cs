@@ -78,6 +78,8 @@ namespace TransBrowser
             // 
             this.pageHeader1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pageHeader1.Location = new System.Drawing.Point(0, 0);
+            this.pageHeader1.MaximizeBox = false;
+            this.pageHeader1.MinimizeBox = false;
             this.pageHeader1.Name = "pageHeader1";
             this.pageHeader1.ShowButton = true;
             this.pageHeader1.ShowIcon = true;
@@ -96,7 +98,6 @@ namespace TransBrowser
             this.Name = "MainForm";
             this.Text = "TransBrowser";
             this.Load += new System.EventHandler(this.MainForm_Load);
-           
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
