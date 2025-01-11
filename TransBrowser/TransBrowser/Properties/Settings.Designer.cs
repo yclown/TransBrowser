@@ -106,5 +106,29 @@ namespace TransBrowser.Properties {
                 this["NoTitle"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MobileMold {
+            get {
+                return ((bool)(this["MobileMold"]));
+            }
+            set {
+                this["MobileMold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DefaultUA {
+            get {
+                return ((string)(this["DefaultUA"]));
+            }
+            set {
+                this["DefaultUA"] = value;
+            }
+        }
     }
 }

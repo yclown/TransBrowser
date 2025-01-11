@@ -36,6 +36,12 @@ namespace TransBrowser
         {
             try
             {
+
+                if(this.webView21.Source!=null&&url == this.webView21.Source.AbsoluteUri)
+                {
+                    this.webView21.Reload();
+                    return;
+                } 
                 this.webView21.Source = new Uri(url);
             }
             catch(Exception e)
@@ -70,6 +76,19 @@ namespace TransBrowser
         {
              
             this.Location = point;
+        } 
+        public void SetMobileMold(bool mobileMold)
+        {
+            
+        }
+        public void SetUA(string UA)
+        {
+            if (!string.IsNullOrEmpty(UA)) {
+                var settings = webView21.CoreWebView2.Settings;
+                settings.UserAgent = UA;
+            }
+           
+            
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -82,10 +101,13 @@ namespace TransBrowser
             ShowWindowsBar(Properties.Settings.Default.NoTitle);
             SetShowInTaskBar(Properties.Settings.Default.ShowInTaskbar);
             SetPosition(Properties.Settings.Default.FormPosition);
-            LoadUrl(Properties.Settings.Default.DefaultUrl);
+            
             SetTans(Properties.Settings.Default.FormOpacity);
             SetDefaultColor(Properties.Settings.Default.ThemeBackColor);
             SetSize(Properties.Settings.Default.FormSize);
+
+            //SetUA(Properties.Settings.Default.DefaultUA);
+            LoadUrl(Properties.Settings.Default.DefaultUrl);
             inited = true;
         }
 
@@ -104,6 +126,14 @@ namespace TransBrowser
             var size= ((System.Windows.Forms.Control)sender).Size;
             Properties.Settings.Default.FormSize = size;
             Properties.Settings.Default.Save();
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //退出程序
+            System.Environment.Exit(System.Environment.ExitCode);
+            this.Dispose();
+            this.Close();
         }
     }
 }

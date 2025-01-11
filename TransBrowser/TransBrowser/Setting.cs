@@ -28,7 +28,7 @@ namespace TransBrowser
        
         private void Setting_Load(object sender, EventArgs e)
         {
-            this.select1.Items=new AntdUI.BaseCollection() {"中文","English" };
+            //this.select1.Items=new AntdUI.BaseCollection() {"中文","English" };
             
         }
         public void Init() {
@@ -89,6 +89,25 @@ namespace TransBrowser
             Properties.Settings.Default.ThemeBackColor = color;
             Properties.Settings.Default.Save();
         }
-         
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.ShowInTaskbar = !this.ShowInTaskbar;
+        }
+
+        private void switch3_CheckedChanged(object sender, BoolEventArgs e)
+        {
+            bool MobileMold = e.Value;
+            Properties.Settings.Default.MobileMold = MobileMold;
+            Properties.Settings.Default.Save();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            var ua= this.ua_input.Text;
+            Properties.Settings.Default.DefaultUA = ua;
+            Properties.Settings.Default.Save();
+            mainForm.SetUA(ua);
+        }
     }
 }
