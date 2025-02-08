@@ -83,6 +83,7 @@
     <Compile Include="Setting.Designer.cs">
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\GlobalHotkey.cs" />
     <Compile Include="Tools\LanguageHelper.cs" />
     <Compile Include="Tools\LogHelper.cs" />
     <EmbeddedResource Include="MainForm.resx">

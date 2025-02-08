@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static TransBrowser.Tools.GlobalHotkey;
 
 namespace TransBrowser
 {
@@ -95,6 +96,7 @@ namespace TransBrowser
             Init();
             this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
             this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
+            Register();
         }
         public void Init()
         {
@@ -135,5 +137,55 @@ namespace TransBrowser
             this.Dispose();
             this.Close();
         }
+
+        #region 全局快捷键
+        protected override void WndProc(ref System.Windows.Forms.Message m)
+        {
+
+            const int WM_HOTKEY = 0x0312;
+
+            switch (m.Msg)
+            {
+                //监听快捷键 消息
+                case WM_HOTKEY:
+                    Deal(this, m.WParam.ToInt32());
+                    break;
+            }
+            base.WndProc(ref m);
+        }
+
+        public void Register()
+        {
+            RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleShow, KeyModifiers.Alt | KeyModifiers.Ctrl, Keys.D);
+        }
+
+        public enum GlobalEvent
+        {
+            ToggleShow = 100   
+        }
+        private void Deal(MainForm mainForm, int eventId)
+        {
+
+            switch (eventId)
+            {
+                case (int)GlobalEvent.ToggleShow:
+                    if (mainForm.Visible)
+                    {
+                        mainForm.Hide();
+                    }
+                    else
+                    {
+                        mainForm.Show();
+                        mainForm.Activate();
+                    }
+                    break;
+                
+            }
+
+
+
+        }
+        #endregion
+
     }
 }
