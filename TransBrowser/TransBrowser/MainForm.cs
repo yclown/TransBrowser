@@ -96,8 +96,20 @@ namespace TransBrowser
             Init();
             this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
             this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
+            this.Deactivate += Form1_Deactivate;
+
             Register();
         }
+        /// <summary>
+        /// 失去焦点时自动隐藏窗体
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_Deactivate(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
         public void Init()
         {
             ShowWindowsBar(Properties.Settings.Default.NoTitle);
