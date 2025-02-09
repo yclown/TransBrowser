@@ -107,7 +107,10 @@ namespace TransBrowser
         /// <param name="e"></param>
         private void Form1_Deactivate(object sender, EventArgs e)
         {
-            this.Hide();
+            if (!this.TopMost)
+            {
+                this.Hide();
+            } 
         }
 
         public void Init()
@@ -169,11 +172,13 @@ namespace TransBrowser
         public void Register()
         {
             RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleShow, KeyModifiers.Alt | KeyModifiers.Ctrl, Keys.D);
+            RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleTop, KeyModifiers.Alt | KeyModifiers.Ctrl, Keys.G);
         }
 
         public enum GlobalEvent
         {
-            ToggleShow = 100   
+            ToggleShow = 100,
+            ToggleTop = 101
         }
         private void Deal(MainForm mainForm, int eventId)
         {
@@ -191,7 +196,9 @@ namespace TransBrowser
                         mainForm.Activate();
                     }
                     break;
-                
+                case (int)GlobalEvent.ToggleTop:
+                    mainForm.TopMost = !mainForm.TopMost;
+                    break;
             }
 
 
