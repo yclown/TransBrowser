@@ -171,8 +171,8 @@ namespace TransBrowser
 
         public void Register()
         {
-            RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleShow, KeyModifiers.Alt | KeyModifiers.Ctrl, Keys.D);
-            RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleTop, KeyModifiers.Alt | KeyModifiers.Ctrl, Keys.G);
+            RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleShow, KeyModifiers.Alt , Keys.D);
+            RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleTop, KeyModifiers.Alt , Keys.F);
         }
 
         public enum GlobalEvent
