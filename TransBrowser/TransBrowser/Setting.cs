@@ -37,7 +37,7 @@ namespace TransBrowser
             this.switch1.Checked = Properties.Settings.Default.NoTitle;
             this.switch2.Checked = Properties.Settings.Default.ShowInTaskbar;
             this.colorPicker1.Value = Properties.Settings.Default.ThemeBackColor; //Properties.Settings.Default.ThemeBackColor;  //
-             
+            this.autohide_sw.Checked = Properties.Settings.Default.AutoHide;
             //this.select1.SelectedIndexChanged += new AntdUI.IntEventHandler(this.select1_SelectedIndexChanged);
             this.slider1.ValueChanged += new AntdUI.IntEventHandler(this.slider1_ValueChanged);
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -118,6 +118,13 @@ namespace TransBrowser
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://gitee.com/yclown/TransBrowser");
+        }
+
+        private void switch4_CheckedChanged(object sender, BoolEventArgs e)
+        {
+            bool AutoHide = e.Value;
+            Properties.Settings.Default.AutoHide = AutoHide;
+            Properties.Settings.Default.Save();
         }
     }
 }

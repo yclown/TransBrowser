@@ -107,10 +107,14 @@ namespace TransBrowser
         /// <param name="e"></param>
         private void Form1_Deactivate(object sender, EventArgs e)
         {
-            if (!this.TopMost)
+            if (this.TopMost)
+            {
+                return;
+            }
+            if (Properties.Settings.Default.AutoHide)
             {
                 this.Hide();
-            } 
+            }
         }
 
         public void Init()
