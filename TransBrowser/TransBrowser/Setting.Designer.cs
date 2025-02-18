@@ -39,16 +39,16 @@ namespace TransBrowser
             this.switch2 = new AntdUI.Switch();
             this.label4 = new AntdUI.Label();
             this.colorPicker1 = new AntdUI.ColorPicker();
-            this.label5 = new AntdUI.Label();
-            this.input1 = new AntdUI.Input();
-            this.button1 = new AntdUI.Button();
-            this.pageHeader1 = new AntdUI.PageHeader();
             this.label6 = new AntdUI.Label();
             this.switch3 = new AntdUI.Switch();
-            this.label7 = new AntdUI.Label();
-            this.ua_input = new AntdUI.Input();
-            this.button2 = new AntdUI.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new AntdUI.Label();
+            this.button2 = new AntdUI.Button();
+            this.ua_input = new AntdUI.Input();
+            this.label7 = new AntdUI.Label();
+            this.button1 = new AntdUI.Button();
+            this.input1 = new AntdUI.Input();
+            this.pageHeader1 = new AntdUI.PageHeader();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +97,7 @@ namespace TransBrowser
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 29);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(453, 314);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(461, 188);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // label2
@@ -141,42 +141,6 @@ namespace TransBrowser
             this.colorPicker1.Text = "colorPicker1";
             this.colorPicker1.Value = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
             // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(3, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 33);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "网址";
-            // 
-            // input1
-            // 
-            this.input1.Location = new System.Drawing.Point(41, 12);
-            this.input1.Name = "input1";
-            this.input1.PlaceholderText = "请输入默认页面地址";
-            this.input1.Size = new System.Drawing.Size(348, 33);
-            this.input1.TabIndex = 10;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(395, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 33);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "加载";
-            this.button1.Type = AntdUI.TTypeMini.Primary;
-            // 
-            // pageHeader1
-            // 
-            this.pageHeader1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pageHeader1.Location = new System.Drawing.Point(0, 0);
-            this.pageHeader1.Name = "pageHeader1";
-            this.pageHeader1.ShowButton = true;
-            this.pageHeader1.ShowIcon = true;
-            this.pageHeader1.Size = new System.Drawing.Size(477, 23);
-            this.pageHeader1.TabIndex = 0;
-            this.pageHeader1.Text = "Setting";
-            // 
             // label6
             // 
             this.label6.Location = new System.Drawing.Point(343, 41);
@@ -184,6 +148,7 @@ namespace TransBrowser
             this.label6.Size = new System.Drawing.Size(58, 23);
             this.label6.TabIndex = 13;
             this.label6.Text = "手机模式";
+            this.label6.Visible = false;
             // 
             // switch3
             // 
@@ -192,33 +157,8 @@ namespace TransBrowser
             this.switch3.Size = new System.Drawing.Size(40, 23);
             this.switch3.TabIndex = 14;
             this.switch3.Text = "switch3";
+            this.switch3.Visible = false;
             this.switch3.CheckedChanged += new AntdUI.BoolEventHandler(this.switch3_CheckedChanged);
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(3, 51);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 33);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "UA";
-            // 
-            // ua_input
-            // 
-            this.ua_input.Location = new System.Drawing.Point(41, 51);
-            this.ua_input.Name = "ua_input";
-            this.ua_input.PlaceholderText = "请输入默认页面地址";
-            this.ua_input.Size = new System.Drawing.Size(348, 33);
-            this.ua_input.TabIndex = 16;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(395, 51);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 33);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "切换";
-            this.button2.Type = AntdUI.TTypeMini.Primary;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // panel1
             // 
@@ -233,11 +173,76 @@ namespace TransBrowser
             this.panel1.Size = new System.Drawing.Size(450, 100);
             this.panel1.TabIndex = 18;
             // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(3, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 33);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "网址";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(395, 51);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(52, 33);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "切换";
+            this.button2.Type = AntdUI.TTypeMini.Primary;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // ua_input
+            // 
+            this.ua_input.Location = new System.Drawing.Point(41, 51);
+            this.ua_input.Name = "ua_input";
+            this.ua_input.PlaceholderText = "请输入默认页面地址";
+            this.ua_input.Size = new System.Drawing.Size(348, 33);
+            this.ua_input.TabIndex = 16;
+            this.ua_input.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(3, 51);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 33);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "UA";
+            this.label7.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(395, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(52, 33);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "加载";
+            this.button1.Type = AntdUI.TTypeMini.Primary;
+            // 
+            // input1
+            // 
+            this.input1.Location = new System.Drawing.Point(41, 12);
+            this.input1.Name = "input1";
+            this.input1.PlaceholderText = "请输入默认页面地址";
+            this.input1.Size = new System.Drawing.Size(348, 33);
+            this.input1.TabIndex = 10;
+            // 
+            // pageHeader1
+            // 
+            this.pageHeader1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pageHeader1.Location = new System.Drawing.Point(0, 0);
+            this.pageHeader1.Name = "pageHeader1";
+            this.pageHeader1.ShowButton = true;
+            this.pageHeader1.ShowIcon = true;
+            this.pageHeader1.Size = new System.Drawing.Size(485, 23);
+            this.pageHeader1.TabIndex = 0;
+            this.pageHeader1.Text = "Setting";
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 366);
+            this.ClientSize = new System.Drawing.Size(485, 240);
             this.Controls.Add(this.pageHeader1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
