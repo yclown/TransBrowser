@@ -109,5 +109,15 @@ namespace TransBrowser
             Properties.Settings.Default.Save();
             mainForm.SetUA(ua);
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/yclown/TransBrowser");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://gitee.com/yclown/TransBrowser");
+        }
     }
 }

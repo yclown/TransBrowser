@@ -124,7 +124,15 @@ namespace TransBrowser
             SetSize(Properties.Settings.Default.FormSize);
 
             //SetUA(Properties.Settings.Default.DefaultUA);
-            LoadUrl(Properties.Settings.Default.DefaultUrl);
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.DefaultUrl))
+            {
+                LoadUrl(Properties.Settings.Default.DefaultUrl);
+            }
+            else
+            {
+                LoadUrl("https://gitee.com/yclown/TransBrowser");
+            }
+            
             inited = true;
         }
 
