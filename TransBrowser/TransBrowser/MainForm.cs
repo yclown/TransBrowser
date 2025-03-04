@@ -18,6 +18,7 @@ namespace TransBrowser
         public MainForm()
         {
             InitializeComponent();
+            InitializeWebView();
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -94,12 +95,31 @@ namespace TransBrowser
         private void MainForm_Load(object sender, EventArgs e)
         {
             Init();
+            //webView21.EnsureCoreWebView2Async().Wait();
             this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
             this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
             this.Deactivate += Form1_Deactivate;
-
+            //webView21.CoreWebView2.NewWindowRequested += NewWindowRequested;
+           
             Register();
         }
+        private async void InitializeWebView()
+        {
+            await webView21.EnsureCoreWebView2Async(null);
+            webView21.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested; 
+        }
+
+        private void CoreWebView2_NewWindowRequested(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NewWindowRequestedEventArgs e)
+        {
+            // Cancel the default behavior of opening a new window
+            e.Handled = true; 
+            // Navigate to the requested URL in the current WebView2 instance
+            webView21.Source = new Uri(e.Uri);
+        }
+
+
+
+
         /// <summary>
         /// 失去焦点时自动隐藏窗体
         /// </summary>
@@ -119,6 +139,7 @@ namespace TransBrowser
 
         public void Init()
         {
+            
             ShowWindowsBar(Properties.Settings.Default.NoTitle);
             SetShowInTaskBar(Properties.Settings.Default.ShowInTaskbar);
             SetPosition(Properties.Settings.Default.FormPosition);
