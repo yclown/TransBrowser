@@ -114,7 +114,10 @@ namespace TransBrowser
             // Cancel the default behavior of opening a new window
             e.Handled = true; 
             // Navigate to the requested URL in the current WebView2 instance
-            webView21.Source = new Uri(e.Uri);
+            //webView21.Source = new Uri(e.Uri);
+            LoadUrl(e.Uri);
+            Properties.Settings.Default.DefaultUrl = e.Uri;
+            Properties.Settings.Default.Save();
         }
 
 
