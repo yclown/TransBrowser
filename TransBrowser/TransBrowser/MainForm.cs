@@ -29,8 +29,8 @@ namespace TransBrowser
 
         private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Setting setting = new Setting(this);
-            //setting.SetMainForm(this);
+            Setting setting = new Setting(this); 
+            setting.StartPosition = FormStartPosition.CenterScreen;
             setting.Show();
         }
 
@@ -209,12 +209,17 @@ namespace TransBrowser
         {
             RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleShow, KeyModifiers.Alt , Keys.D);
             RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleTop, KeyModifiers.Alt , Keys.F);
+            RegisterHotKey(this.Handle, (int)GlobalEvent.GoBack, KeyModifiers.Alt|KeyModifiers.Shift , Keys.Z);
+            RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleTop, KeyModifiers.Alt | KeyModifiers.Shift, Keys.X);
         }
 
         public enum GlobalEvent
         {
             ToggleShow = 100,
-            ToggleTop = 101
+            ToggleTop = 101,
+            GoBack = 102,
+            GoForward = 103
+        
         }
         private void Deal(MainForm mainForm, int eventId)
         {
@@ -235,6 +240,12 @@ namespace TransBrowser
                 case (int)GlobalEvent.ToggleTop:
                     mainForm.TopMost = !mainForm.TopMost;
                     break;
+                case (int)GlobalEvent.GoBack:
+                    GoBack();
+                    break; 
+                case (int)GlobalEvent.GoForward:
+                    GoForward();
+                    break;
             }
 
 
@@ -242,5 +253,23 @@ namespace TransBrowser
         }
         #endregion
 
+
+        public void GoBack()
+        {
+            webView21.GoBack();
+        }
+        public void GoForward()
+        {
+            webView21.GoForward();
+           
+        }
+
+        private void 控制器ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControlPanel control = new ControlPanel();
+            control.setMainForm(this); 
+            control.StartPosition = FormStartPosition.CenterScreen;
+            control.Show();
+        }
     }
 }

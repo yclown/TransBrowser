@@ -37,6 +37,7 @@ namespace TransBrowser
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageHeader1 = new AntdUI.PageHeader();
+            this.控制器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,22 +65,23 @@ namespace TransBrowser
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.控制器ToolStripMenuItem,
             this.设置ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // 设置ToolStripMenuItem
             // 
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.设置ToolStripMenuItem.Text = "设置";
             this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -95,6 +97,13 @@ namespace TransBrowser
             this.pageHeader1.Size = new System.Drawing.Size(584, 23);
             this.pageHeader1.TabIndex = 2;
             this.pageHeader1.Text = "TransBrowser";
+            // 
+            // 控制器ToolStripMenuItem
+            // 
+            this.控制器ToolStripMenuItem.Name = "控制器ToolStripMenuItem";
+            this.控制器ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.控制器ToolStripMenuItem.Text = "控制器";
+            this.控制器ToolStripMenuItem.Click += new System.EventHandler(this.控制器ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -120,6 +129,7 @@ namespace TransBrowser
         private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
         private AntdUI.PageHeader pageHeader1;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 控制器ToolStripMenuItem;
     }
 }
 
