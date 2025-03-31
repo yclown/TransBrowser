@@ -17,7 +17,8 @@
 | --- | --- | 
 |  Alt+D|  显示（隐藏）|  
 |  Alt+F|  窗口置顶，置顶后窗口失去焦点不隐藏|  
-
+|  Alt+Shift+Z|  后退|  
+|  Alt+Shift+X|  前进|  
 
 ## 界面预览
 ![image](preview/main.png)
