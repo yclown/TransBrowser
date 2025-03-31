@@ -32,6 +32,10 @@ namespace TransBrowser
             this.pageHeader1 = new AntdUI.PageHeader();
             this.button1 = new AntdUI.Button();
             this.button2 = new AntdUI.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new AntdUI.Button();
+            this.label1 = new AntdUI.Label();
+            this.button4 = new AntdUI.Button();
             this.SuspendLayout();
             // 
             // pageHeader1
@@ -40,8 +44,7 @@ namespace TransBrowser
             this.pageHeader1.Location = new System.Drawing.Point(0, 0);
             this.pageHeader1.Name = "pageHeader1";
             this.pageHeader1.ShowButton = true;
-            this.pageHeader1.ShowIcon = true;
-            this.pageHeader1.Size = new System.Drawing.Size(223, 23);
+            this.pageHeader1.Size = new System.Drawing.Size(198, 23);
             this.pageHeader1.TabIndex = 0;
             this.pageHeader1.Text = "控制器";
             // 
@@ -63,17 +66,56 @@ namespace TransBrowser
             this.button2.Text = "前进";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 118);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(168, 81);
+            this.textBox1.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(105, 205);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 34);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "执行js";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(13, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 23);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "JS脚本";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(13, 205);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 33);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "选择js文件";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // ControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(223, 217);
+            this.ClientSize = new System.Drawing.Size(198, 288);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pageHeader1);
             this.Name = "ControlPanel";
             this.Text = "ControlPanel";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,5 +124,9 @@ namespace TransBrowser
         private AntdUI.PageHeader pageHeader1;
         private AntdUI.Button button1;
         private AntdUI.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private AntdUI.Button button3;
+        private AntdUI.Label label1;
+        private AntdUI.Button button4;
     }
 }

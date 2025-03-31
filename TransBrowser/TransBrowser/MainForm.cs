@@ -212,7 +212,10 @@ namespace TransBrowser
             RegisterHotKey(this.Handle, (int)GlobalEvent.GoBack, KeyModifiers.Alt|KeyModifiers.Shift , Keys.Z);
             RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleTop, KeyModifiers.Alt | KeyModifiers.Shift, Keys.X);
         }
-
+        public void RunJs(string scritpt)
+        {
+            webView21.ExecuteScriptAsync(scritpt);
+        }
         public enum GlobalEvent
         {
             ToggleShow = 100,
