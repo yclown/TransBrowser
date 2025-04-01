@@ -34,10 +34,10 @@ namespace TransBrowser
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.控制器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageHeader1 = new AntdUI.PageHeader();
-            this.控制器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +53,8 @@ namespace TransBrowser
             this.webView21.Size = new System.Drawing.Size(584, 388);
             this.webView21.TabIndex = 1;
             this.webView21.ZoomFactor = 1D;
+            this.webView21.MouseDown += new System.Windows.Forms.MouseEventHandler(this.webView21_MouseDown);
+            this.webView21.MouseMove += new System.Windows.Forms.MouseEventHandler(this.webView21_MouseMove);
             // 
             // notifyIcon1
             // 
@@ -69,19 +71,26 @@ namespace TransBrowser
             this.设置ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(113, 70);
+            // 
+            // 控制器ToolStripMenuItem
+            // 
+            this.控制器ToolStripMenuItem.Name = "控制器ToolStripMenuItem";
+            this.控制器ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.控制器ToolStripMenuItem.Text = "控制器";
+            this.控制器ToolStripMenuItem.Click += new System.EventHandler(this.控制器ToolStripMenuItem_Click);
             // 
             // 设置ToolStripMenuItem
             // 
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.设置ToolStripMenuItem.Text = "设置";
             this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -97,13 +106,6 @@ namespace TransBrowser
             this.pageHeader1.Size = new System.Drawing.Size(584, 23);
             this.pageHeader1.TabIndex = 2;
             this.pageHeader1.Text = "TransBrowser";
-            // 
-            // 控制器ToolStripMenuItem
-            // 
-            this.控制器ToolStripMenuItem.Name = "控制器ToolStripMenuItem";
-            this.控制器ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.控制器ToolStripMenuItem.Text = "控制器";
-            this.控制器ToolStripMenuItem.Click += new System.EventHandler(this.控制器ToolStripMenuItem_Click);
             // 
             // MainForm
             // 

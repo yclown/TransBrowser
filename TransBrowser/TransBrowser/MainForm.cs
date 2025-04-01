@@ -274,5 +274,27 @@ namespace TransBrowser
             control.StartPosition = FormStartPosition.CenterScreen;
             control.Show();
         }
+        private Point mouseOffset;
+        private bool isRightButtonDown;
+        private void webView21_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.ContextMenuStrip.Show(this.PointToScreen(new Point(e.X, e.Y)));
+                mouseOffset.X = e.X;
+                mouseOffset.Y = e.Y;
+                isRightButtonDown = true;
+            }
+        }
+
+        private void webView21_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isRightButtonDown)
+            {
+                Point newLocation = this.Location;
+                newLocation.Offset(e.X - mouseOffset.X, e.Y - mouseOffset.Y);
+                this.Location = newLocation;
+            }
+        }
     }
 }
