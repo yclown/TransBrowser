@@ -1,4 +1,5 @@
 ﻿using AntdUI;
+using Microsoft.Web.WebView2.Core;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,16 @@ namespace TransBrowser
         public void setMainForm(MainForm mainForm)
         {
             this.mainForm = mainForm;
+            mainForm.GetWebView2().NavigationCompleted += AutoScript;
+        }
+
+        private void AutoScript(object sender, CoreWebView2NavigationCompletedEventArgs e)
+        {
+
+            if (!string.IsNullOrEmpty(this.textBox1.Text)&&this.checkBox1.Checked)
+            {
+                mainForm?.RunJs(this.textBox1.Text);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,6 +89,13 @@ namespace TransBrowser
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ControlPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //mainForm.GetWebView2().NavigationCompleted-= AutoScript;
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }

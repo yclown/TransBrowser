@@ -53,6 +53,7 @@ namespace TransBrowser
             this.webView21.Size = new System.Drawing.Size(584, 388);
             this.webView21.TabIndex = 1;
             this.webView21.ZoomFactor = 1D;
+        
             this.webView21.MouseDown += new System.Windows.Forms.MouseEventHandler(this.webView21_MouseDown);
             this.webView21.MouseMove += new System.Windows.Forms.MouseEventHandler(this.webView21_MouseMove);
             // 

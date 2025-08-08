@@ -106,7 +106,8 @@ namespace TransBrowser
         private async void InitializeWebView()
         {
             await webView21.EnsureCoreWebView2Async(null);
-            webView21.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested; 
+            webView21.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
+            
         }
 
         private void CoreWebView2_NewWindowRequested(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NewWindowRequestedEventArgs e)
@@ -266,10 +267,10 @@ namespace TransBrowser
             webView21.GoForward();
            
         }
-
+        ControlPanel control = new ControlPanel();
         private void 控制器ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ControlPanel control = new ControlPanel();
+            
             control.setMainForm(this); 
             control.StartPosition = FormStartPosition.CenterScreen;
             control.Show();
@@ -295,6 +296,11 @@ namespace TransBrowser
                 newLocation.Offset(e.X - mouseOffset.X, e.Y - mouseOffset.Y);
                 this.Location = newLocation;
             }
+        }
+
+        public Microsoft.Web.WebView2.WinForms.WebView2 GetWebView2()
+        {
+            return this.webView21;
         }
     }
 }

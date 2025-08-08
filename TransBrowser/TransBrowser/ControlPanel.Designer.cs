@@ -36,6 +36,7 @@ namespace TransBrowser
             this.button3 = new AntdUI.Button();
             this.label1 = new AntdUI.Label();
             this.button4 = new AntdUI.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // pageHeader1
@@ -44,7 +45,7 @@ namespace TransBrowser
             this.pageHeader1.Location = new System.Drawing.Point(0, 0);
             this.pageHeader1.Name = "pageHeader1";
             this.pageHeader1.ShowButton = true;
-            this.pageHeader1.Size = new System.Drawing.Size(198, 23);
+            this.pageHeader1.Size = new System.Drawing.Size(279, 23);
             this.pageHeader1.TabIndex = 0;
             this.pageHeader1.Text = "控制器";
             // 
@@ -68,15 +69,19 @@ namespace TransBrowser
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 118);
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(12, 96);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(168, 81);
+            this.textBox1.Size = new System.Drawing.Size(249, 130);
             this.textBox1.TabIndex = 3;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(105, 205);
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.Location = new System.Drawing.Point(93, 232);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 34);
             this.button3.TabIndex = 4;
@@ -85,26 +90,38 @@ namespace TransBrowser
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(13, 89);
+            this.label1.Location = new System.Drawing.Point(24, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 23);
+            this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "JS脚本";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(13, 205);
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.Location = new System.Drawing.Point(12, 233);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 33);
             this.button4.TabIndex = 6;
             this.button4.Text = "选择js文件";
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(108, 74);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(72, 16);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "自动执行";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // ControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(198, 288);
+            this.ClientSize = new System.Drawing.Size(279, 278);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
@@ -114,6 +131,7 @@ namespace TransBrowser
             this.Controls.Add(this.pageHeader1);
             this.Name = "ControlPanel";
             this.Text = "ControlPanel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ControlPanel_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +146,6 @@ namespace TransBrowser
         private AntdUI.Button button3;
         private AntdUI.Label label1;
         private AntdUI.Button button4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
