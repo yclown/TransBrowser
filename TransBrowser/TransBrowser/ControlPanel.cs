@@ -61,6 +61,7 @@ namespace TransBrowser
                 {
                     // 异步读取文件内容
                     string content =  File.ReadAllText(filePath);
+                    this.textBox1.Text = content;
                     mainForm?.RunJs(content);
                     
                 }
