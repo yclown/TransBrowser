@@ -282,7 +282,7 @@ namespace TransBrowser
             this.linkLabel2.Size = new System.Drawing.Size(113, 12);
             this.linkLabel2.TabIndex = 4;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "gitte TransBrowser";
+            this.linkLabel2.Text = "gitee TransBrowser";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // linkLabel1
