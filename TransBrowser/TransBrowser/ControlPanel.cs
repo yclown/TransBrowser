@@ -27,6 +27,7 @@ namespace TransBrowser
         {
             this.mainForm = mainForm;
             mainForm.GetWebView2().NavigationCompleted += AutoScript;
+            mainForm.GetWebView2().CoreWebView2.FrameNavigationCompleted += AutoScript;
         }
 
         private void AutoScript(object sender, CoreWebView2NavigationCompletedEventArgs e)
