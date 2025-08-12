@@ -212,6 +212,7 @@ namespace TransBrowser
             RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleTop, KeyModifiers.Alt , Keys.F);
             RegisterHotKey(this.Handle, (int)GlobalEvent.GoBack, KeyModifiers.Alt|KeyModifiers.Shift , Keys.Z);
             RegisterHotKey(this.Handle, (int)GlobalEvent.ToggleTop, KeyModifiers.Alt | KeyModifiers.Shift, Keys.X);
+            RegisterHotKey(this.Handle, (int)GlobalEvent.RunJs, KeyModifiers.Alt | KeyModifiers.Shift, Keys.C);
         }
         public void RunJs(string scritpt)
         {
@@ -222,7 +223,8 @@ namespace TransBrowser
             ToggleShow = 100,
             ToggleTop = 101,
             GoBack = 102,
-            GoForward = 103
+            GoForward = 103,
+            RunJs = 104
         
         }
         private void Deal(MainForm mainForm, int eventId)
@@ -249,6 +251,10 @@ namespace TransBrowser
                     break; 
                 case (int)GlobalEvent.GoForward:
                     GoForward();
+                    break; 
+                case (int)GlobalEvent.RunJs:
+                    RunJs(control.GetJs());
+
                     break;
             }
 

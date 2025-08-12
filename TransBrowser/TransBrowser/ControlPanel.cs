@@ -99,5 +99,11 @@ namespace TransBrowser
             this.Hide();
             e.Cancel = true;
         }
+
+        public string GetJs()
+        {
+            return this.textBox1.Text;
+        }
+        
     }
 }
