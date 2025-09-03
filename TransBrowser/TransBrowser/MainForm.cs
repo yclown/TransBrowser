@@ -99,10 +99,17 @@ namespace TransBrowser
             this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
             this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
             this.Deactivate += Form1_Deactivate;
-            //webView21.CoreWebView2.NewWindowRequested += NewWindowRequested;
+            this.webView21.NavigationCompleted += CoreWebView2_NavigationCompleted;
            
             Register();
         }
+
+        private void CoreWebView2_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
+        {
+            Properties.Settings.Default.DefaultUrl = this.webView21.Source.AbsoluteUri;
+            Properties.Settings.Default.Save();
+        }
+
         private async void InitializeWebView()
         {
             await webView21.EnsureCoreWebView2Async(null);

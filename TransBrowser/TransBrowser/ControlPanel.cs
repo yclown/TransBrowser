@@ -53,7 +53,8 @@ namespace TransBrowser
         {
             CommonOpenFileDialog folderBrowser = new CommonOpenFileDialog();
             folderBrowser.Title = "请选择要注入的js文件";
-            folderBrowser.Filters.Add(new CommonFileDialogFilter("JavaScript文件", "*.js"));
+            // 设置文件过滤器 js 或者 txt 
+            folderBrowser.Filters.Add(new CommonFileDialogFilter("JS内容", "*.js,*.txt"));
             if (folderBrowser.ShowDialog() == CommonFileDialogResult.Ok)
             {
                  
