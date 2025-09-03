@@ -96,6 +96,7 @@
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\GlobalHotkey.cs" />
+    <Compile Include="Tools\Ini.cs" />
     <Compile Include="Tools\LanguageHelper.cs" />
     <Compile Include="Tools\LogHelper.cs" />
     <EmbeddedResource Include="ControlPanel.resx">

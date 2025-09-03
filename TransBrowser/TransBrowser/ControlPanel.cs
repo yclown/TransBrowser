@@ -18,9 +18,12 @@ namespace TransBrowser
     {
 
         private MainForm mainForm;
+        private Tools.Ini myIni;
         public ControlPanel()
         {
             InitializeComponent();
+            myIni= new Tools.Ini(".ini");
+            this.textBox1.Text=myIni.GetValue("Runjs");
         }
 
         public void setMainForm(MainForm mainForm)
@@ -64,7 +67,9 @@ namespace TransBrowser
                     // 异步读取文件内容
                     string content =  File.ReadAllText(filePath);
                     this.textBox1.Text = content;
-                    mainForm?.RunJs(content);
+                    myIni.WriteValue("Runjs", content);
+                    myIni.Save();
+                    //mainForm?.RunJs(content);
                     
                 }
                 catch (Exception ex)
